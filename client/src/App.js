@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <nav>Navbar</nav>
       <h1>test</h1>
     </div>
   );
