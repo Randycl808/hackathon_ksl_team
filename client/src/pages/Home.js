@@ -21,7 +21,9 @@ const Home = () => {
                         return(
                             <div className='border' key={i.id}>
                                 <p>Name: {i.name}</p>
-                                <p> ID: {i.name}</p>
+                                <p> ID: {i.id}</p>
+                                <p> Description: {i.description}</p>
+                                <p> Price: {i.price}</p>
                                 <button onClick={()=>deleteItem(mon.monster.id, i.id)}>Delete treatment</button>
                                 </div>
                         );
