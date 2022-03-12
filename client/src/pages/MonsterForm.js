@@ -34,7 +34,7 @@ const MonsterForm = () => {
         e.preventDefault()
         try {
             if (params.id) {
-                await axios.put(`/api/monsters/${params.id}`, {
+                await axios.put(`/${params.id}`, {
                     name,
                     id: params.id,
                 })
