@@ -3,26 +3,6 @@ import React, { useContext, useState } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { DataContext } from '../providers/DataProvider'
 
-// const MonsterForm = () => {
-//     const navigate = useNavigate()
-//     const location = useLocation()
-//     const [name, setName] = useState(location.state ? location.state.name : '')
-//     const params = useParams()
-    
-//     const handleSubmit = async (e) => {
-//         e.preventDefault()
-//             try {
-//                 if(params.id) {
-//                     axios.put(`/api/monsters/${params.id}`, {name, id:params.id})
-//                 } else {
-//                     axios.post(`/api/monsters/${params.id}`, {name, id:params.id})
-//                 }
-//                 navigate('/monsters')
-//             } catch(err){
-//                 alert('err')
-//             }
-//     }
-
 const MonsterForm = () => {
     const {addMonster} = useContext(DataContext)
     const  navigate = useNavigate()
