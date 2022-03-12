@@ -14,7 +14,7 @@ end
   end
 
   def monsters_all
-    render json: {monster: @monster, treatments: @monster.treatments}
+    render json: {monster: @monster, items: @monster.items}
 end
 
 def show

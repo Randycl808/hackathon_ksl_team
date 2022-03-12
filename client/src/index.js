@@ -18,7 +18,7 @@ import Item from './components/Item'
 import ItemForm from './components/ItemForm'
 import DataProvider from './providers/DataProvider';
 import JobForm from './pages/JobForm'
-
+import JobShow from './pages/JobShow'
 
 // import your route components too
 
@@ -34,6 +34,7 @@ ReactDOM.render(
         <Route path="monsters/:id/edit" element={<MonsterForm />} />
         
         <Route path="jobs/:id/edit" element={<JobForm />} />
+        <Route path="jobs/:id" element={<JobShow/>} />
 
         <Route path="about" element={<About />} />
         <Route path="jobs" element={<Jobs />} />
