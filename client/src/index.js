@@ -14,6 +14,7 @@ import MonsterShow from './pages/MonsterShow'
 import MonsterForm from './pages/MonsterForm'
 import About from './pages/About'
 import Jobs from './pages/Jobs'
+//import Monster from './components/Monster'
 
 // import your route components too
 
