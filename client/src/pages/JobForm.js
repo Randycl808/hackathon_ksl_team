@@ -15,16 +15,16 @@ const JobForm = () => {
         e.preventDefault()
         try {
             if (params.id) {
-                await axios.put(`/api/monsters/${params.id}`, {
+                await axios.put(`/api/jobs/${params.id}`, {
                     title,
                     id: params.id,
                 })
             } else {
-                let res = await axios.post(`/api/monsters`, {title})
+                let res = await axios.post(`/api/jobs`, {title})
                 console.log('res.data:', res.data)
                 addJob(res.data)
             }
-            navigate('/monsters')
+            navigate('/jobs')
         } catch (err) {
             alert('err')
         }

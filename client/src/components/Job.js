@@ -15,8 +15,8 @@ const Job = (props) => {
 
             
             <button onClick={()=> deleteJob(id)}>delete</button>
-            <button onClick={()=> navigate(`monster/${id}/edit`, {state: {title, id, company, salary}})}>edit</button>
-            <button onClick={()=> navigate(`monsters/${id}/show`, {state: {title, id, company, salary}})}>show</button>
+            <button onClick={()=> navigate(`jobs/${id}/edit`, {state: {title, id, company, salary}})}>edit</button>
+            <button onClick={()=> navigate(`jobs/${id}/show`, {state: {title, id, company, salary}})}>show</button>
             
         </div>
     )

@@ -8,13 +8,13 @@ const Jobs = () => {
     const navigate = useNavigate()
     const [jobs, setJobs] = useState([])
     useEffect(()=>{
-        console.log('mounted and doing api call to get monsters')
+        console.log('mounted and doing api call to get jobs')
         getJobs()
     },[])
 
     const addJob = async (job)=>{
         try {
-            let res = await axios.post("/api/monsters", job)
+            let res = await axios.post("/api/jobs", job)
             setJobs([res.data, ...jobs]);
           } catch (err) {
             alert("error occured");
@@ -23,14 +23,14 @@ const Jobs = () => {
     
    
     const deleteJob = async (id) => {
-        await axios.delete(`/api/monsters/${id}`);
+        await axios.delete(`/api/jobs/${id}`);
         let filteredJobs = jobs.filter(job => job.id !== id)
         setJobs(filteredJobs)
     }
 
     const getJobs = async()=>{
         try {
-        let res = await axios.get('/api/monsters')
+        let res = await axios.get('/api/jobs')
         setJobs(res.data)
         }catch(err){
             alert('error in getJobs')
