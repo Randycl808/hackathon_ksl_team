@@ -11,7 +11,7 @@ const ItemForm = (props) => {
         if(props.id){
             props.updateItem({name, id: props.id, price, description})
         } else {
-            props.addItem({name})
+            props.addItem({name},)
         }
     }
         return (

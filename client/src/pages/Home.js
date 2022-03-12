@@ -8,6 +8,7 @@ const Home = () => {
         console.log("Use effect in home called")
     },[])
     const{ monsterData, deleteItem, deleteMonster} = useContext(DataContext)
+    
     const renderMonsterData = () => {
         return monsterData.map((mon) =>{
             return (
