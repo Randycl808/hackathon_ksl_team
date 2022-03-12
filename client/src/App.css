@@ -18,6 +18,12 @@
 
 .App {
   text-align: center;
+  background: #718F94;
+  color: #F2DFD7;
+}
+
+h1 {
+  color: #471323;
 }
 
 .App-logo {
@@ -55,3 +61,16 @@
   }
 }
 
+.button {
+  background: #471323;
+  color: #F2DFD7;
+  padding: 5px;
+  border-radius: 10px;
+
+}
+
+nav {
+  background: #122C34;
+  text-align: left;
+  padding: 10px;
+}
