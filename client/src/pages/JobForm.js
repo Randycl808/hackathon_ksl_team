@@ -3,11 +3,12 @@ import React, { useContext, useState } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { DataContext } from '../providers/DataProvider'
 
-const MonsterForm = () => {
-    const {addMonster} = useContext(DataContext)
+
+const JobForm = () => {
+    const {addJob} = useContext(DataContext)
     const  navigate = useNavigate()
     const location = useLocation()
-    const [name, setName] = useState(location.state ? location.state.name : '')
+    const [title, setTitle] = useState(location.state ? location.state.title : '')
     const params = useParams()
 
     const handleSubmit = async (e) => {
@@ -15,13 +16,13 @@ const MonsterForm = () => {
         try {
             if (params.id) {
                 await axios.put(`/api/monsters/${params.id}`, {
-                    name,
+                    title,
                     id: params.id,
                 })
             } else {
-                let res = await axios.post(`/api/monsters`, {name})
+                let res = await axios.post(`/api/monsters`, {title})
                 console.log('res.data:', res.data)
-                addMonster(res.data)
+                addJob(res.data)
             }
             navigate('/monsters')
         } catch (err) {
@@ -32,10 +33,10 @@ const MonsterForm = () => {
 
     return (
         <div className= 'border'>
-            <h1>{params.id ? 'Edit' : 'New'} Monster Form</h1>
+            <h1>{params.id ? 'Edit' : 'New'} Job Form</h1>
             <form onSubmit={handleSubmit}>
-                <p>Monster Name</p>
-                <input value={name} onChange={(e) => setName(e.target.value)} />
+                <p>Job Title</p>
+                <input value={title} onChange={(e) => setTitle(e.target.value)} />
                 <button>{params.id ? 'Update' : 'Create'}</button>    
             </form>
             <p>id: {params.id ? params.id : 'no id'}</p>
@@ -44,4 +45,4 @@ const MonsterForm = () => {
     )
 }
 
-export default MonsterForm
+export default JobForm
