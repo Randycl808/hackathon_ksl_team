@@ -54,3 +54,11 @@
     transform: rotate(360deg);
   }
 }
+
+.home {
+  background-color: #663f46;
+}
+
+.delete-button {
+  background-color: red;
+}

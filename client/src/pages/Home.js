@@ -34,7 +34,7 @@ const Home = () => {
         })
     }
     return (
-        <div>
+        <div className='home'>
             <h1>Home</h1>
             <h2><Link to="/monsters">Monsters</Link></h2>
             <h2><Link to="/jobs">Jobs for Monsters</Link></h2>
