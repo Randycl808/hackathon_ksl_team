@@ -50,8 +50,11 @@ m8.items.create(name:'Laser output coupler', description: 'Helps create extra po
 m8.items.create(name:'Steel lab table', description:'High quality steel grade for all the lab experiments you will perform on your human captives', price:700.00)
 
 
-
+Job.create(title:'Party Monster', company:'Hire-a-Horror', salary:20000)
+Job.create(title:'Monster Admin', company:'Hire-a-Horror', salary:24000)
+Job.create(title:'Seasonal Soul', company:'Hire-a-Horror', salary:6000)
 
 
 puts "Monsters: #{Monster.all.size}"
 puts "Items: #{Item.all.size}"
+puts "Jobs: #{Job.all.size}"
