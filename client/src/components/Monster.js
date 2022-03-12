@@ -11,7 +11,7 @@ const Monster = (props) => {
         <p>id: {id}</p>
         <p>name: {name}</p>
             
-            <button className="delete_button" onClick={()=> deleteMonster(id)}>delete</button>
+            <button className="button" onClick={()=> deleteMonster(id)}>delete</button>
             <button onClick={()=> navigate(`/monsters/${id}/edit`, {state: {name, id}})}>edit</button>
             <button onClick={()=> navigate(`/monsters/${id}`, {state: {name, id}})}>show</button>
             
