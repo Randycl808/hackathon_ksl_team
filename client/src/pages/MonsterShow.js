@@ -40,7 +40,7 @@ const MonsterShow = () => {
         //delete from UI
         setItems(items.filter(i=> i.id !== id))
     }
-    //gets treatments from DATABASE
+    //gets items from DATABASE
     const getItems = async () => {
         //api call
         let res = await axios.get(`/api/monsters/${params.id}/items`)
