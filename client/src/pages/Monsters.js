@@ -11,10 +11,16 @@ const Monsters = () => {
         getMonsters()
     },[])
 
-    const addMonster = ()=>{
-
-    }
+    const addMonster = async (monster)=>{
+        try {
+            let res = await axios.post("/api/monsters", monster)
+            setMonsters([res.data, ...monsters]);
+          } catch (err) {
+            alert("error occured");
+          }
+        }
     
+   
     const deleteMonster = async (id) => {
         await axios.delete(`/api/monsters/${id}`);
         let filteredMonsters = monsters.filter(monster => monster.id !== id)
@@ -32,7 +38,7 @@ const Monsters = () => {
 
     const renderMonsters = () => {
         return monsters.map(monster=> {
-            return <Monster key={monster.id} {...monster}deleteMonster={deleteMonster} />
+            return <Monster key={monster.id} {...monster}deleteMonster={deleteMonster} addMonster={addMonster}/>
         })
     }
 
