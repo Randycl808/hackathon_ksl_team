@@ -50,4 +50,3 @@ class Api::ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :price, :monster)
   end
 end
-
