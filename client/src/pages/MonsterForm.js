@@ -1,39 +1,55 @@
 import axios from 'axios'
 import React, { useContext, useState } from 'react'
-import { useParams, useLocation, useNavigate, Navigate } from 'react-router-dom'
+import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { DataContext } from '../providers/DataProvider'
 
+// const MonsterForm = () => {
+//     const navigate = useNavigate()
+//     const location = useLocation()
+//     const [name, setName] = useState(location.state ? location.state.name : '')
+//     const params = useParams()
+    
+//     const handleSubmit = async (e) => {
+//         e.preventDefault()
+//             try {
+//                 if(params.id) {
+//                     axios.put(`/api/monsters/${params.id}`, {name, id:params.id})
+//                 } else {
+//                     axios.post(`/api/monsters/${params.id}`, {name, id:params.id})
+//                 }
+//                 navigate('/monsters')
+//             } catch(err){
+//                 alert('err')
+//             }
+//     }
+
 const MonsterForm = () => {
+    const {addMonster} = useContext(DataContext)
+    const  navigate = useNavigate()
     const location = useLocation()
     const [name, setName] = useState(location.state ? location.state.name : '')
     const params = useParams()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        if(params.id){
-            console.log('update')
-            console.log({name, id:params.id})
-        } else {
-            console.log('create')
-            console.log({name, setName})
+        try {
+            if (params.id) {
+                await axios.put(`/api/monsters/${params.id}`, {
+                    name,
+                    id: params.id,
+                })
+            } else {
+                let res = await axios.post(`/api/monsters`, {name})
+                console.log('res.data:', res.data)
+                addMonster(res.data)
+            }
+            navigate('/monsters')
+        } catch (err) {
+            alert('err')
         }
     }
 
-    //     try {
-    //         if (params.id) {
-    //             await axios.put(`/api/monsters/${params.id}`, {
-    //                 name,
-    //                 id: params.id,
-    //             })
-    //         } else {
-    //             let res = await axios.post(`/api/monsters`, {name})
-    //             console.log('res.data:', res.data)
-    //         }
-    //         Navigate('/monsters')
-    //     } catch (err) {
-    //         alert('err')
-    //     }
-    // }
+
     return (
         <div className= 'border'>
             <h1>{params.id ? 'Edit' : 'New'} Monster Form</h1>

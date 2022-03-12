@@ -16,11 +16,13 @@ import About from './pages/About'
 import Jobs from './pages/Jobs'
 import Item from './components/Item'
 import ItemForm from './components/ItemForm'
+import DataProvider from './providers/DataProvider';
 
 // import your route components too
 
 ReactDOM.render(
-  <BrowserRouter>
+  <DataProvider>
+    <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
@@ -35,10 +37,11 @@ ReactDOM.render(
         <Route path ="item/:id/edit" element={<ItemForm />}></Route>
       </Route>
     </Routes>
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+  </BrowserRouter>
+</DataProvider>,
 
+document.getElementById("root")
+);
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
