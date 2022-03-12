@@ -14,6 +14,8 @@ import MonsterShow from './pages/MonsterShow'
 import MonsterForm from './pages/MonsterForm'
 import About from './pages/About'
 import Jobs from './pages/Jobs'
+import Item from './components/Item'
+import ItemForm from './components/ItemForm'
 
 // import your route components too
 
@@ -28,6 +30,9 @@ ReactDOM.render(
         <Route path="monsters/:id/edit" element={<MonsterForm />} />
         <Route path="about" element={<About />} />
         <Route path="jobs" element={<Jobs />} />
+        <Route path ="item" element={<Item />}></Route>
+        <Route path ="itemform" element={<ItemForm />}></Route>
+        <Route path ="item/:id/edit" element={<ItemForm />}></Route>
       </Route>
     </Routes>
   </BrowserRouter>,
