@@ -14,14 +14,14 @@ const JobShow = () => {
     },[])
     const addJob = async (job)=>{
         //adds job to DATABASE
-        let res = await axios.post(`/api/jobs/${params.id}`)
+        let res = await axios.post(`/api/jobs/${params.id}`, job)
         //updating STATE (jobs)
         setJobs([...jobs, res.data])
     }
 
     const updateJob = async (job)=>{
         //updates job to DATABASE
-        let res = await axios.put(`/api/job/${params.id}/jobs/${job.id}`)
+        let res = await axios.put(`/api/job/${params.id}/jobs/${job.id}`, job)
         //UI portion of update
         const updateJobs = jobs.map(i => i.id === res.data.id ? res.data : i)
         console.log('res.data:', res.data)
@@ -41,7 +41,7 @@ const JobShow = () => {
     //gets jobs from DATABASE
     const getJobs = async () => {
         //api call
-        let res = await axios.get(`/api/jobs/${params.id}`)
+        let res = await axios.get(`/api/jobs/${params.id}/jobs`)
         //store the data from axios in state (useSTATE)
         setJobs(res.data)
     }
