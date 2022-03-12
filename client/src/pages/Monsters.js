@@ -46,7 +46,7 @@ const Monsters = () => {
     return (
         <div>
             <h1>Monsters</h1>
-            <button onClick={()=>navigate('/monsters/new')}>new</button>
+            <button className="button" onClick={()=>navigate('/monsters/new')}>new</button>
             <div>
             {renderMonsters()}
             </div>
