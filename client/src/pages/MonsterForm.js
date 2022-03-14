@@ -36,7 +36,7 @@ const MonsterForm = () => {
             <form onSubmit={handleSubmit}>
                 <p>Monster Name</p>
                 <input value={name} onChange={(e) => setName(e.target.value)} />
-                <button>{params.id ? 'Update' : 'Create'}</button>    
+                <button className="button">{params.id ? 'Update' : 'Create'}</button>    
             </form>
             <p>id: {params.id ? params.id : 'no id'}</p>
             <p>{JSON.stringify(location.state)}</p>
