@@ -3,7 +3,6 @@ import React, { useContext, useState } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { DataContext } from '../providers/DataProvider'
 
-
 const JobForm = () => {
     const {addJob} = useContext(DataContext)
     const  navigate = useNavigate()

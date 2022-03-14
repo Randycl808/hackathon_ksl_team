@@ -6,7 +6,6 @@ import {useNavigate, } from 'react-router-dom'
 
 const Monster = (props) => {
     // setting variable navigate in order to use useNavigate hook
-
     const navigate = useNavigate()
     const {name, id, deleteMonster} = props
 
