@@ -15,7 +15,7 @@ const Home = () => {
                 <div className='border' key={mon.monster.id} >
                     <p>Monster Name: {mon.monster.name}</p>
                     <p>Monster id: {mon.monster.id}</p>
-                    <button onClick={()=>deleteMonster(mon.monster.id)}>Delete Bug</button>
+                    <button className="button" onClick={()=>deleteMonster(mon.monster.id)}>Delete Monster</button>
                     <div className='border'>
                     {mon.items.map((i) => {
                         return(
@@ -24,7 +24,7 @@ const Home = () => {
                                 <p> ID: {i.id}</p>
                                 <p> Description: {i.description}</p>
                                 <p> Price: {i.price}</p>
-                                <button onClick={()=>deleteItem(mon.monster.id, i.id)}>Delete treatment</button>
+                                <button className="button" onClick={()=>deleteItem(mon.monster.id, i.id)}>Delete Item</button>
                                 </div>
                         );
                     })}

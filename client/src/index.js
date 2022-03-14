@@ -34,6 +34,7 @@ ReactDOM.render(
         <Route path="monsters/:id/edit" element={<MonsterForm />} />
         
         <Route path="jobs/:id/edit" element={<JobForm />} />
+        <Route path="jobs/new" element={<JobForm />} />
         <Route path="jobs/:id" element={<JobShow/>} />
 
         <Route path="about" element={<About />} />

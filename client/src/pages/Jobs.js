@@ -47,7 +47,7 @@ const Jobs = () => {
     return (
         <div>
             <h1>Jobs</h1>
-            <button onClick={()=>navigate('/jobs/new')}>new</button>
+            <button className="button" onClick={()=>navigate('/jobs/new')}>new</button>
             <div>
             {renderJobs()}
             </div>

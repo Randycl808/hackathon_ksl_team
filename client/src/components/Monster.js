@@ -1,7 +1,12 @@
+// import React functionality
 import React from 'react'
+
+// import the useNavigate hook 
 import {useNavigate, } from 'react-router-dom'
 
 const Monster = (props) => {
+    // setting variable navigate in order to use useNavigate hook
+
     const navigate = useNavigate()
     const {name, id, deleteMonster} = props
 
@@ -12,8 +17,10 @@ const Monster = (props) => {
         <p>name: {name}</p>
             
             <button className="button" onClick={()=> deleteMonster(id)}>delete</button>
-            <button onClick={()=> navigate(`/monsters/${id}/edit`, {state: {name, id}})}>edit</button>
-            <button onClick={()=> navigate(`/monsters/${id}`, {state: {name, id}})}>show</button>
+             {/* navigate hook gives the api route for edit in 1st argument and passes the state in 2nd argument in order to prepopulate content */}
+            <button className="button" onClick={()=> navigate(`/monsters/${id}/edit`, {state: {name, id}})}>edit</button>
+             {/* navigate hook gives the api route for show in 1st argument and passes the state in 2nd argument in order to prepopulate content */}
+            <button className="button" onClick={()=> navigate(`/monsters/${id}`, {state: {name, id}})}>show</button>
             
         </div>
     )
