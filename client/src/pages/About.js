@@ -1,5 +1,7 @@
+// import React functionality
 import React from 'react'
 
+//creates an about function that includes a h3, h4, paragraph, and list syntax for the about page
 const About = () => {
     return (
         <div className= 'border'>
