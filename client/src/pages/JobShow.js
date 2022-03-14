@@ -55,8 +55,7 @@ const JobShow = () => {
 
     return (
         <div>
-            <h1>JobShow</h1>
-            <h1> Job: {location.state.title}</h1>
+            <h1> Job Title: {location.state.title}</h1>
             <p>ID: {params.id}</p>
             <JobForm addJob={addJob} />
             <hr />
