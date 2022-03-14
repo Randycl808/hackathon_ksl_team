@@ -26,7 +26,7 @@ const ItemForm = (props) => {
                 <input value={price} onChange={(e) => setPrice(e.target.value)} />
                 <p>Description:</p>
                 <input value={description} onChange={(e) => setDescription(e.target.value)} />
-                <button>add</button>
+                <button className="button">add</button>
             </form>
         </div>
     )
