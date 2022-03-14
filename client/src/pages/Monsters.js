@@ -6,6 +6,7 @@ import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 //imports the monster page for use
 import Monster from '../components/Monster'
+
 //declare function called monsters
 const Monsters = () => {
     const navigate = useNavigate() //navigate hook that is used for the navigate function in the code (on line 53 for example)
