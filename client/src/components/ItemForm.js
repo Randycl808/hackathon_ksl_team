@@ -1,7 +1,11 @@
 // import React functionality
 import React, { useState }from 'react'
 
+
+// setting a function called ItemForm
 const ItemForm = (props) => {
+    // setting the useState for 'name' |
+    // pulling the state from the current location | if there is no name setting it to ''
     const [name, setName ] = useState(props.name || '');
     const [price, setPrice ] = useState(props.price || '');
     const [description, setDescription ] = useState(props.description || '');
